@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — oneTap</title>
+<meta name="description" content="Privacy policy for the oneTap Android app." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%236c8bff%22/></svg>">
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html" style="text-decoration:none;">
+      <span class="brand-mark">⚡</span>
+      oneTap
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#waitlist">Waitlist</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </nav>
+</div>
+
+<div class="wrap">
+  <section class="policy">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: July 10, 2026</p>
+
+    <div class="notice">
+      This policy explains what oneTap ("the app," "we," "us") does and does not do with your
+      information. oneTap is currently in development and has not yet been published; this
+      policy will be kept up to date as the app is finalized and released.
+    </div>
+
+    <h2>The short version</h2>
+    <p>
+      oneTap has no user accounts, no login, and no advertising or analytics tracking. It works
+      almost entirely on your device. The one thing that leaves your device is the text you
+      paste, share, or speak into oneTap when you ask it to figure out a calendar event, alarm,
+      or reminder — that text is sent to a third-party AI service to be interpreted, and is not
+      stored on our own servers, because we don't operate any.
+    </p>
+
+    <h2>Information we process</h2>
+
+    <h3>1. Text you paste, share, or speak</h3>
+    <p>
+      When you paste text, share text into oneTap from another app, or use a voice command that
+      isn't a simple device control (see below), that text is sent to a third-party AI language
+      model provider so it can be turned into structured event details (title, date, time,
+      duration, and similar fields). This text may include names, places, or other personal
+      details if you included them in the message you provided.
+    </p>
+    <ul>
+      <li>We do not store a copy of this text on any server we operate — oneTap doesn't have a
+        backend of its own.</li>
+      <li>The AI provider processes the request to generate a response and is contractually a
+        data processor for this purpose; it is not used to build a profile of you, and is not
+        shared for advertising.</li>
+      <li>We may change AI providers over time as the app evolves; this policy will be updated
+        to reflect that.</li>
+    </ul>
+
+    <h3>2. Calendar and alarm data</h3>
+    <p>
+      With your permission, oneTap reads and writes calendar events (to create or remove events
+      you've asked it to act on) and creates device alarms. This all happens directly through
+      Android's own calendar and alarm system on your device — oneTap does not copy this data
+      anywhere else. If your device's calendar account is itself synced to a service (for
+      example, a Google account you've added to your phone), that sync is handled by your
+      device/account provider, not by oneTap.
+    </p>
+    <p>
+      oneTap keeps a small local record (on your device only) of which calendar events it
+      created, so it can find and remove the right one later if you ask it to cancel something.
+    </p>
+
+    <h3>3. Voice commands and microphone access</h3>
+    <p>
+      Voice commands are opt-in and only listen while you're actively tapping-to-talk — oneTap
+      does not listen in the background or continuously. Speech-to-text conversion is handled
+      by your device's built-in speech recognition service (the same one used elsewhere on
+      Android), not by oneTap's own infrastructure.
+    </p>
+    <p>
+      A small, fixed set of device-control commands (volume, brightness, flashlight, media
+      playback, ringer mode, Do Not Disturb) are matched entirely on your device and never
+      leave it. Anything else you say that isn't one of these commands is treated the same as
+      pasted/shared text, per the section above.
+    </p>
+
+    <h3>4. Device settings permissions</h3>
+    <p>
+      Voice commands can, at your request, change a few device settings directly: media volume,
+      screen brightness, flashlight, ringer mode, and Do Not Disturb. These changes happen
+      locally through Android's own system APIs and involve no data collection — we simply
+      change the setting you asked for.
+    </p>
+
+    <h3>5. App preferences</h3>
+    <p>
+      Simple preferences — like whether the floating bubble or voice commands are turned on,
+      and where you last positioned the bubble on screen — are stored locally on your device
+      and are never transmitted anywhere.
+    </p>
+
+    <h2>Permissions oneTap requests, and why</h2>
+    <table>
+      <tr><th>Permission</th><th>Why oneTap asks for it</th></tr>
+      <tr><td>Calendar (read/write)</td><td>To create, find, and delete calendar events you've asked oneTap to act on.</td></tr>
+      <tr><td>Set alarm</td><td>To create device alarms from reminders you've asked to be scheduled.</td></tr>
+      <tr><td>Display over other apps</td><td>To show the optional floating quick-action bubble.</td></tr>
+      <tr><td>Microphone</td><td>Only used while you're actively using the mic's tap-to-talk voice command feature.</td></tr>
+      <tr><td>Modify system settings</td><td>Lets voice commands change screen brightness when you ask.</td></tr>
+      <tr><td>Modify audio settings</td><td>Lets voice commands change media volume when you ask.</td></tr>
+      <tr><td>Notification/Do Not Disturb access</td><td>Lets voice commands change ringer mode or Do Not Disturb when you ask.</td></tr>
+      <tr><td>Internet</td><td>Needed to send pasted/shared/spoken text to the AI service that interprets it.</td></tr>
+    </table>
+    <p>Every one of these is used only for the feature it's named after — none are used to
+      collect data for any other purpose, and each can be turned off in the app or in Android's
+      own permission settings at any time.</p>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>No account creation, sign-in, or password of any kind.</li>
+      <li>No advertising, ad networks, or ad tracking.</li>
+      <li>No analytics or crash-reporting SDKs that build a profile of you.</li>
+      <li>No selling or renting of any information to third parties.</li>
+    </ul>
+
+    <h2>Data retention and deletion</h2>
+    <p>
+      Because oneTap stores almost everything locally on your device, uninstalling the app (or
+      clearing its storage in Android's app settings) removes its local data, including
+      preferences and the record of app-created calendar events. Text sent to the AI provider
+      for interpretation is processed to generate a response and is not retained by us, since we
+      don't operate a server to retain it on. If you have questions about a specific request,
+      contact us using the email below.
+    </p>
+
+    <h2>Children's privacy</h2>
+    <p>
+      oneTap is not directed at children under 13, and we do not knowingly collect information
+      from children under that age.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      If oneTap's features or data handling change — for example, switching AI providers, or
+      adding new voice commands — this page will be updated and the "Last updated" date above
+      will change accordingly.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy or how oneTap handles information can be sent to
+      <a href="mailto:raoasad125@gmail.com">raoasad125@gmail.com</a>.
+    </p>
+
+    <div class="notice">
+      This page is a plain-language description of how oneTap works and is provided as a
+      starting point, not formal legal advice. If you plan to publish oneTap publicly (e.g. on
+      the Play Store) and want stronger legal protection or need to comply with a specific
+      regulation (GDPR, CCPA, etc.), consider having this reviewed by a lawyer familiar with
+      your target markets.
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <footer>
+    <div class="footer-row">
+      <div>© <span id="year"></span> oneTap. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="mailto:raoasad125@gmail.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
