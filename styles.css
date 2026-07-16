@@ -754,9 +754,17 @@ footer {
   z-index: 2;
 }
 
-/* Crops the real screenshot so the device's own status bar (inconsistent time,
-   battery %, USB/debug icons) never shows — a clean fake one is drawn on top
-   instead, the same trick real App/Play Store listing screenshots use. */
+/* Crops a small, deliberately conservative sliver off the top of each real
+   screenshot — just enough to remove the device status bar (inconsistent
+   time, battery %, USB/debug icons) — without a replacement fake status bar.
+   An earlier version tried to draw a fake status bar in the freed-up space,
+   sized from an eyeballed guess at the real one's height. That guess was
+   wrong by a few percent in both directions across different screens (no
+   pixel-level access to the source images to measure exactly), so the fake
+   bar either double-exposed over real header text or clipped it.
+   Cropping alone has no such failure mode: worse case if this is a touch
+   conservative is a couple of extra pixels of the app's own (already dark)
+   background at the very top — invisible — never garbled or cut-off text. */
 .phone-screen {
   position: relative;
   overflow: hidden;
@@ -768,11 +776,11 @@ footer {
 
 .phone-screen img {
   position: absolute;
-  top: -4.2%;
+  top: -2.6%;
   left: 0;
   display: block;
   width: 100%;
-  height: 104.2%;
+  height: 102.6%;
   object-fit: cover;
   object-position: top;
 }
@@ -785,38 +793,6 @@ footer {
   background: linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0%, transparent 18%, transparent 82%, rgba(255, 255, 255, 0.04) 100%);
   pointer-events: none;
   z-index: 2;
-}
-
-/* Height matches the image crop above (~4.2% of a ~394px-tall screen ≈ 17px) so
-   this opaque strip lines up exactly with the hidden real status bar — no gap,
-   no overlap with the app's own header content underneath. */
-.phone-statusbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 17px;
-  padding: 0 13px;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.phone-statusbar .sb-time {
-  line-height: 1;
-}
-
-.phone-statusbar .sb-icons {
-  display: flex;
-  align-items: center;
-  gap: 5px;
 }
 
 .showcase-hint {
