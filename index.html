@@ -4,11 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>oneTap — Paste it, say it, or share it. Let AI schedule it.</title>
-<meta name="description" content="oneTap turns any pasted, shared, or spoken text into a calendar event, alarm, or reminder automatically — plus a floating quick-action bubble and hands-free voice commands. Join the waitlist." />
+<meta name="description" content="oneTap turns any pasted, shared, or spoken text into a calendar event, alarm, or reminder automatically — plus a floating quick-action bubble, hands-free voice commands, and one-tap Google Drive backup. Join the waitlist." />
 <link rel="stylesheet" href="styles.css" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%236c8bff%22/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%235dcaa5%22/></svg>">
 </head>
 <body>
+
+<div class="bg-blob" aria-hidden="true"></div>
 
 <div class="wrap">
   <nav class="nav">
@@ -17,6 +19,7 @@
       oneTap
     </div>
     <div class="nav-links">
+      <a href="#why-onetap">Why oneTap</a>
       <a href="#features">Features</a>
       <a href="#how-it-works">How it works</a>
       <a href="#waitlist">Waitlist</a>
@@ -28,64 +31,100 @@
 <div class="wrap">
   <section class="hero">
     <span class="eyebrow">🚧 In development — join the waitlist for early access</span>
-    <h1>Paste it, say it, or share it.<br><span>Let AI schedule it.</span></h1>
-    <p class="lead">
+    <h1 class="reveal">Paste it, say it, or share it.<br><span>Let AI schedule it.</span></h1>
+    <p class="lead reveal" style="transition-delay: 0.1s;">
       oneTap reads a message you paste, share, or speak, and turns it into a calendar event,
       alarm, or reminder — no typing dates and times in by hand. Review before anything's
       created, then confirm with one tap.
     </p>
-    <div class="cta-row">
+    <div class="cta-row reveal" style="transition-delay: 0.2s;">
       <a href="#waitlist" class="btn btn-primary">Join the waitlist</a>
       <a href="#features" class="btn btn-ghost">See what it does</a>
     </div>
   </section>
 </div>
 
+<div class="wrap" id="why-onetap">
+  <section>
+    <div class="section-head reveal">
+      <div class="kicker">Why oneTap</div>
+      <h2>The busywork oneTap takes off your plate</h2>
+      <p>Six things most phones still make you do by hand — and how oneTap removes each one.</p>
+    </div>
+
+    <div class="compare">
+      <div class="compare-col problem reveal">
+        <h3>😩 Without oneTap</h3>
+        <ul class="compare-list">
+          <li><span class="mark">✕</span> Typing every event by hand from a text message</li>
+          <li><span class="mark">✕</span> Screenshots of receipts pile up and never get logged</li>
+          <li><span class="mark">✕</span> "Was 'next Friday' the 24th or the 31st?"</li>
+          <li><span class="mark">✕</span> Digging through Settings to change brightness or go silent</li>
+          <li><span class="mark">✕</span> Worried an AI app might create the wrong thing automatically</li>
+          <li><span class="mark">✕</span> Losing everything if you switch or lose your phone</li>
+        </ul>
+      </div>
+
+      <div class="compare-col solution reveal" style="transition-delay: 0.12s;">
+        <h3>✨ With oneTap</h3>
+        <ul class="compare-list">
+          <li><span class="mark">✓</span> Paste, share, or speak it — oneTap fills in the title, date, and time itself</li>
+          <li><span class="mark">✓</span> Share the screenshot — oneTap reads it and logs the expense, even itemized</li>
+          <li><span class="mark">✓</span> Understands relative dates and recurring phrases, and converts them exactly</li>
+          <li><span class="mark">✓</span> A floating bubble with voice commands — hands-free, from any app</li>
+          <li><span class="mark">✓</span> Nothing happens without your OK — review and edit before confirming</li>
+          <li><span class="mark">✓</span> One-tap backup and restore, straight to your own Google Drive</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
 <div class="wrap" id="features">
   <section>
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="kicker">Features</div>
       <h2>Everything oneTap can already do</h2>
       <p>Built to remove the tedious part of turning a message into something on your calendar.</p>
     </div>
 
     <div class="grid">
-      <div class="card">
+      <div class="card reveal">
         <div class="icon">📋</div>
         <h3>Paste &amp; go</h3>
         <p>Paste any message — a text, an email, a note to yourself — and oneTap figures out
           whether it's a meeting, a reminder, or something to cancel.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal" style="transition-delay: 0.05s;">
         <div class="icon">📤</div>
         <h3>Share from anywhere</h3>
         <p>Share text straight from any app's share sheet and oneTap opens with it already
           filled in and interpreted.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal" style="transition-delay: 0.1s;">
         <div class="icon">🧠</div>
         <h3>Smart scheduling</h3>
         <p>Understands "tomorrow," "in 20 minutes," "next Friday," and recurring phrases like
           "every Monday" — and converts them to exact dates and times.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal">
         <div class="icon">✅</div>
         <h3>Review before it's real</h3>
         <p>Nothing touches your calendar without your OK. Edit the title, date, time, duration,
           or location on an editable preview card first.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal" style="transition-delay: 0.05s;">
         <div class="icon">💬</div>
         <h3>Floating quick action</h3>
         <p>A small bubble that follows you across every app, so you can act on copied text
           without ever switching back to oneTap.</p>
       </div>
 
-      <div class="card">
+      <div class="card reveal" style="transition-delay: 0.1s;">
         <div class="icon">🎙️</div>
         <h3>Voice commands</h3>
         <p>Tap the bubble's mic and say things like "brightness to 50%," "turn on the
@@ -97,25 +136,25 @@
 
 <div class="wrap" id="how-it-works">
   <section>
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="kicker">How it works</div>
       <h2>Three steps, no manual entry</h2>
     </div>
 
     <div class="steps">
-      <div class="step">
+      <div class="step reveal">
         <div class="num">1</div>
         <h3>Paste, share, or speak</h3>
         <p>Drop in a message, share text from another app, or tap the bubble and say what you
           need scheduled.</p>
       </div>
-      <div class="step">
+      <div class="step reveal" style="transition-delay: 0.08s;">
         <div class="num">2</div>
         <h3>oneTap reads it</h3>
         <p>It works out the title, date, time, duration, and whether it's an event, an alarm,
           or a cancellation.</p>
       </div>
-      <div class="step">
+      <div class="step reveal" style="transition-delay: 0.16s;">
         <div class="num">3</div>
         <h3>You confirm, it's done</h3>
         <p>Double-check the details on the preview card, tap confirm, and it's on your
@@ -127,7 +166,7 @@
 
 <div class="wrap" id="waitlist">
   <section>
-    <div class="waitlist">
+    <div class="waitlist reveal">
       <h2>Get early access</h2>
       <p>oneTap is still in development. Leave your email and you'll be the first to know
         when it's ready to try.</p>
@@ -161,6 +200,24 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reveal-on-scroll: each .reveal element (see styles.css) fades/slides into place the
+  // first time it enters the viewport. Falls back to fully-visible via the plain .reveal
+  // rule if IntersectionObserver isn't supported, so nothing is ever permanently hidden.
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in-view'));
+  }
 
   const form = document.getElementById('waitlistForm');
   form.addEventListener('submit', async (e) => {

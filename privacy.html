@@ -6,7 +6,7 @@
 <title>Privacy Policy — oneTap</title>
 <meta name="description" content="Privacy policy for the oneTap Android app." />
 <link rel="stylesheet" href="styles.css" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%236c8bff%22/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%235dcaa5%22/></svg>">
 </head>
 <body>
 
@@ -17,6 +17,7 @@
       oneTap
     </a>
     <div class="nav-links">
+      <a href="index.html#why-onetap">Why oneTap</a>
       <a href="index.html#features">Features</a>
       <a href="index.html#waitlist">Waitlist</a>
       <a href="privacy.html">Privacy</a>
@@ -27,7 +28,7 @@
 <div class="wrap">
   <section class="policy">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 10, 2026</p>
+    <p class="updated">Last updated: July 16, 2026</p>
 
     <div class="notice">
       This policy explains what oneTap ("the app," "we," "us") does and does not do with your
@@ -107,6 +108,33 @@
       and are never transmitted anywhere.
     </p>
 
+    <h3>6. Google Drive backup (optional)</h3>
+    <p>
+      oneTap can optionally back up your transactions, calendar events, and alarm history to
+      your own Google Drive account, so you don't lose that data if you switch or lose your
+      phone. This is entirely manual and opt-in — nothing is backed up unless you tap "Connect
+      Google Drive" and then "Back up now" yourself.
+    </p>
+    <ul>
+      <li>oneTap only ever requests the <code>drive.appdata</code> permission scope, which
+        gives it access to a single hidden folder created for oneTap specifically — not your
+        wider Google Drive, and not any of your other files.</li>
+      <li>This hidden folder isn't visible in Google Drive's normal website or app, even to
+        you — it exists solely so oneTap can store and retrieve its own backup file.</li>
+      <li>The backup file contains the same transaction, event, and alarm-history data
+        described above, and nothing else (no account passwords, no Google account data
+        beyond what's needed to store the file).</li>
+      <li>We (the developer) never see this data — it goes directly from your device to your
+        own Google Drive over Google's servers, the same way any other app you authorize to
+        use Google Drive works.</li>
+      <li>Tapping "Disconnect" in Settings stops oneTap from accessing Drive going forward.
+        Fully removing the app's stored backup data is done the same way as for any other
+        app you've connected to your Google account: revoking oneTap's access from your
+        Google Account's connected-apps/permissions settings removes its hidden data folder,
+        or you can use "Restore" first if you want that data back on the device before
+        removing it from Drive.</li>
+    </ul>
+
     <h2>Permissions oneTap requests, and why</h2>
     <table>
       <tr><th>Permission</th><th>Why oneTap asks for it</th></tr>
@@ -139,6 +167,12 @@
       for interpretation is processed to generate a response and is not retained by us, since we
       don't operate a server to retain it on. If you have questions about a specific request,
       contact us using the email below.
+    </p>
+    <p>
+      If you've used the optional Google Drive backup feature, see "Google Drive backup" above
+      for how to remove that data — it lives in your own Google Drive account, not on any
+      server we operate, so it's removed the same way you'd remove any other app's access to
+      your Google account.
     </p>
 
     <h2>Children's privacy</h2>
