@@ -768,11 +768,11 @@ footer {
 
 .phone-screen img {
   position: absolute;
-  top: -3.6%;
+  top: -4.2%;
   left: 0;
   display: block;
   width: 100%;
-  height: 103.6%;
+  height: 104.2%;
   object-fit: cover;
   object-position: top;
 }
@@ -787,22 +787,30 @@ footer {
   z-index: 2;
 }
 
+/* Height matches the image crop above (~4.2% of a ~394px-tall screen ≈ 17px) so
+   this opaque strip lines up exactly with the hidden real status bar — no gap,
+   no overlap with the app's own header content underneath. */
 .phone-statusbar {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 28px;
-  padding: 7px 15px 0;
+  height: 17px;
+  padding: 0 13px;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #fff;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.01em;
   z-index: 3;
   pointer-events: none;
+}
+
+.phone-statusbar .sb-time {
+  line-height: 1;
 }
 
 .phone-statusbar .sb-icons {
