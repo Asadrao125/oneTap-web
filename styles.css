@@ -652,3 +652,104 @@ footer {
 .compare-list li {
   min-height: 44px;
 }
+
+/* Screenshot showcase — real app screens in phone frames, horizontally scrollable
+   like a Play Store listing's own screenshot strip. */
+.showcase {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 4px 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.showcase::-webkit-scrollbar {
+  height: 6px;
+}
+
+.showcase::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 3px;
+}
+
+.showcase-card {
+  flex: 0 0 auto;
+  width: 240px;
+  scroll-snap-align: start;
+  border-radius: 20px;
+  padding: 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease;
+}
+
+.showcase-card:nth-child(3n+1) {
+  background: #17241f;
+  transform: rotate(-2deg);
+}
+
+.showcase-card:nth-child(3n+2) {
+  background: #241c17;
+  transform: rotate(2deg);
+}
+
+.showcase-card:nth-child(3n) {
+  background: #241f14;
+  transform: rotate(-1.5deg);
+}
+
+.showcase-card:hover {
+  transform: rotate(0deg) translateY(-6px);
+}
+
+.showcase-card h3 {
+  font-size: 14.5px;
+  margin: 0 0 6px;
+}
+
+.showcase-card p {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  margin: 0 0 16px;
+}
+
+.phone-frame {
+  margin-top: auto;
+  background: #000;
+  border-radius: 26px;
+  padding: 8px;
+  position: relative;
+}
+
+.phone-frame::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 5px;
+  border-radius: 3px;
+  background: #2a2a2a;
+  z-index: 1;
+}
+
+.phone-frame img {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+}
+
+.showcase-hint {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+@media (min-width: 860px) {
+  .showcase-hint {
+    display: none;
+  }
+}
