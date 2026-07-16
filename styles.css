@@ -686,21 +686,27 @@ footer {
 
 .showcase-card:nth-child(3n+1) {
   background: #17241f;
-  transform: rotate(-2deg);
+  transform: rotate(-1.1deg);
 }
 
 .showcase-card:nth-child(3n+2) {
   background: #241c17;
-  transform: rotate(2deg);
+  transform: rotate(1.1deg);
 }
 
 .showcase-card:nth-child(3n) {
   background: #241f14;
-  transform: rotate(-1.5deg);
+  transform: rotate(-0.8deg);
+}
+
+.showcase-card {
+  box-shadow: 0 18px 34px -20px rgba(0, 0, 0, 0.65);
 }
 
 .showcase-card:hover {
-  transform: rotate(0deg) translateY(-6px);
+  transform: rotate(0deg) translateY(-8px);
+  z-index: 2;
+  box-shadow: 0 28px 46px -18px rgba(0, 0, 0, 0.7);
 }
 
 .showcase-card h3 {
@@ -714,31 +720,95 @@ footer {
   margin: 0 0 16px;
 }
 
+/* Phone bezel — a subtle glow sits behind the device so it lifts off the tinted
+   card instead of reading as a flat rectangle. */
 .phone-frame {
   margin-top: auto;
-  background: #000;
-  border-radius: 26px;
-  padding: 8px;
+  background: linear-gradient(155deg, #333 0%, #101010 22%, #000 60%);
+  border-radius: 30px;
+  padding: 9px;
   position: relative;
+  box-shadow:
+    0 26px 40px -18px rgba(0, 0, 0, 0.75),
+    0 2px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+.phone-frame::after {
+  content: "";
+  position: absolute;
+  inset: -18px -18px -8px;
+  background: radial-gradient(60% 50% at 50% 30%, rgba(93, 202, 165, 0.16), transparent 70%);
+  z-index: -1;
 }
 
 .phone-frame::before {
   content: "";
   position: absolute;
-  top: 8px;
+  top: 9px;
   left: 50%;
   transform: translateX(-50%);
   width: 46px;
   height: 5px;
   border-radius: 3px;
   background: #2a2a2a;
-  z-index: 1;
+  z-index: 2;
 }
 
-.phone-frame img {
+/* Crops the real screenshot so the device's own status bar (inconsistent time,
+   battery %, USB/debug icons) never shows — a clean fake one is drawn on top
+   instead, the same trick real App/Play Store listing screenshots use. */
+.phone-screen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  aspect-ratio: 9 / 19.5;
+  background: #000;
+  isolation: isolate;
+}
+
+.phone-screen img {
+  position: absolute;
+  top: -3.6%;
+  left: 0;
   display: block;
   width: 100%;
-  border-radius: 18px;
+  height: 103.6%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Faint glass highlight across the screen for a bit of shine, like a real display. */
+.phone-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0%, transparent 18%, transparent 82%, rgba(255, 255, 255, 0.04) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.phone-statusbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  padding: 7px 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.phone-statusbar .sb-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .showcase-hint {
