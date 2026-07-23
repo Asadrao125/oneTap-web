@@ -88,7 +88,7 @@ body {
   width: 640px;
   height: 640px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(93, 202, 165, 0.22), rgba(240, 153, 123, 0.12) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(93, 202, 165, 0.24), rgba(93, 202, 165, 0.08) 55%, transparent 75%);
   filter: blur(10px);
   z-index: 0;
   pointer-events: none;
@@ -106,6 +106,15 @@ body {
   z-index: 1;
 }
 
+/* The mobile dropdown menu (.nav-links.open) is position:absolute inside this .wrap,
+   with its own z-index:20 — but that only ranks it against siblings *within* this
+   .wrap's stacking context, not against the next .wrap (hero, etc.), which paints on
+   top of it otherwise since both .wrap elements share z-index:1. Raising this specific
+   .wrap's z-index lets the dropdown actually sit above every section below it. */
+.nav-wrap {
+  z-index: 30;
+}
+
 a {
   color: var(--accent);
   text-decoration: none;
@@ -119,6 +128,20 @@ a:hover {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding: 48px 0 40px;
+  }
+
+  section {
+    padding: 48px 0;
+  }
 }
 
 /* Nav */
@@ -141,11 +164,6 @@ a:hover {
 .brand-mark {
   width: 32px;
   height: 32px;
-  border-radius: 9px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
   animation: floatY 4.5s ease-in-out infinite;
 }
@@ -169,6 +187,61 @@ a:hover {
 
 .nav-links a:hover {
   color: var(--text);
+}
+
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: var(--bg-soft);
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile nav: below 720px the link row becomes a hamburger-triggered dropdown
+   instead of squeezing 6 links into one line or letting them wrap awkwardly. */
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 2px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 18px 34px -20px rgba(0, 0, 0, 0.65);
+    z-index: 20;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+
+  .nav-links a:hover {
+    background: var(--bg-soft);
+  }
 }
 
 /* Hero */
@@ -203,7 +276,7 @@ a:hover {
 }
 
 .hero h1 span {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: linear-gradient(135deg, var(--accent), #2f8f72);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -237,7 +310,7 @@ a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: linear-gradient(135deg, var(--accent), #2f8f72);
   color: #0b0f19;
 }
 
@@ -373,14 +446,14 @@ section {
 
 .step:hover {
   transform: translateY(-5px);
-  border-color: var(--accent-2);
+  border-color: var(--accent);
 }
 
 .step .num {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: linear-gradient(135deg, var(--accent), #2f8f72);
   color: #0b0f19;
   display: flex;
   align-items: center;

@@ -6,19 +6,23 @@
 <title>oneTap — Paste it, say it, or share it. Let AI schedule it.</title>
 <meta name="description" content="oneTap turns any pasted, shared, or spoken text into a calendar event, alarm, or reminder automatically — plus a floating quick-action bubble, hands-free voice commands, and one-tap Google Drive backup. Join the waitlist." />
 <link rel="stylesheet" href="styles.css" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%235dcaa5%22/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 108 108%22><circle cx=%2254%22 cy=%2254%22 r=%2254%22 fill=%22%230F6E56%22/><path d=%22M58.1,32.2 L43.1,55.4 L51.3,55.4 L47.9,75.1 L64.9,51.3 L55.4,51.3 Z%22 fill=%22%23fff%22/></svg>">
 </head>
 <body>
 
 <div class="bg-blob" aria-hidden="true"></div>
 
-<div class="wrap">
+<div class="wrap nav-wrap">
   <nav class="nav">
     <div class="brand">
-      <span class="brand-mark">⚡</span>
+      <svg class="brand-mark" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="54" cy="54" r="54" fill="#0F6E56" />
+        <path d="M58.1,32.2 L43.1,55.4 L51.3,55.4 L47.9,75.1 L64.9,51.3 L55.4,51.3 Z" fill="#FFFFFF" />
+      </svg>
       oneTap
     </div>
-    <div class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
       <a href="#why-onetap">Why oneTap</a>
       <a href="#screenshots">Screenshots</a>
       <a href="#features">Features</a>
@@ -95,37 +99,37 @@
         <p>Home shows this week's spending, events, and alarms the moment you open it.</p>
         <div class="phone-frame">
           <div class="phone-screen">
-            <img src="screenshots/WhatsApp%20Image%202026-07-16%20at%208.57.49%20PM.jpeg" alt="oneTap Home screen showing quick actions and recent activity" loading="lazy" />
+            <img src="screenshots/home.png" alt="oneTap Home screen showing quick actions and recent activity" loading="lazy" />
           </div>
         </div>
       </div>
 
       <div class="showcase-card">
-        <h3>Itemized, automatically</h3>
-        <p>Share a receipt photo and review every line item before anything's saved.</p>
+        <h3>Just speak your update</h3>
+        <p>Tap and talk — a live transcript streams in as you go, no typing at all.</p>
         <div class="phone-frame">
           <div class="phone-screen">
-            <img src="screenshots/WhatsApp%20Image%202026-07-16%20at%209.05.15%20PM.jpeg" alt="oneTap itemized receipt review screen" loading="lazy" />
+            <img src="screenshots/voice-capture.png" alt="oneTap real-time voice capture screen with live transcript" loading="lazy" />
           </div>
         </div>
       </div>
 
       <div class="showcase-card">
-        <h3>Know where it went</h3>
+        <h3>Every expense, organized</h3>
         <p>Net income and expenses for the month, broken down and ready to scan.</p>
         <div class="phone-frame">
           <div class="phone-screen">
-            <img src="screenshots/WhatsApp%20Image%202026-07-16%20at%208.57.50%20PM.jpeg" alt="oneTap Transactions tab showing monthly net balance" loading="lazy" />
+            <img src="screenshots/transactions.png" alt="oneTap Transactions tab showing monthly net balance" loading="lazy" />
           </div>
         </div>
       </div>
 
       <div class="showcase-card">
-        <h3>Spending by category</h3>
+        <h3>See exactly where it goes</h3>
         <p>Every transaction sorted into a category automatically, charted for you.</p>
         <div class="phone-frame">
           <div class="phone-screen">
-            <img src="screenshots/WhatsApp%20Image%202026-07-16%20at%208.57.50%20PM%20(1).jpeg" alt="oneTap all expenses pie chart by category" loading="lazy" />
+            <img src="screenshots/category-chart.png" alt="oneTap all expenses pie chart by category" loading="lazy" />
           </div>
         </div>
       </div>
@@ -135,7 +139,7 @@
         <p>Only the events oneTap created for you — never your whole calendar.</p>
         <div class="phone-frame">
           <div class="phone-screen">
-            <img src="screenshots/WhatsApp%20Image%202026-07-16%20at%208.57.50%20PM%20(2).jpeg" alt="oneTap Events tab" loading="lazy" />
+            <img src="screenshots/events.png" alt="oneTap Events tab" loading="lazy" />
           </div>
         </div>
       </div>
@@ -145,17 +149,17 @@
         <p>See what you've asked oneTap to set, with a shortcut to the Clock app.</p>
         <div class="phone-frame">
           <div class="phone-screen">
-            <img src="screenshots/WhatsApp%20Image%202026-07-16%20at%208.57.51%20PM%20(1).jpeg" alt="oneTap Alarms tab" loading="lazy" />
+            <img src="screenshots/alarms.png" alt="oneTap Alarms tab" loading="lazy" />
           </div>
         </div>
       </div>
 
       <div class="showcase-card">
-        <h3>Just say it</h3>
-        <p>Hands-free device control — volume, brightness, flashlight, and more.</p>
+        <h3>Make it yours</h3>
+        <p>Light, dark, or system theme, and every feature toggled on only if you want it.</p>
         <div class="phone-frame">
           <div class="phone-screen">
-            <img src="screenshots/WhatsApp%20Image%202026-07-16%20at%208.57.51%20PM%20(2).jpeg" alt="oneTap voice commands help screen" loading="lazy" />
+            <img src="screenshots/settings-top.png" alt="oneTap Settings screen with theme picker and feature toggles" loading="lazy" />
           </div>
         </div>
       </div>
@@ -165,7 +169,17 @@
         <p>One tap to back up to your own Google Drive, and restore just as easily.</p>
         <div class="phone-frame">
           <div class="phone-screen">
-            <img src="screenshots/WhatsApp%20Image%202026-07-16%20at%208.57.51%20PM.jpeg" alt="oneTap Settings screen with Google Drive backup" loading="lazy" />
+            <img src="screenshots/settings-backup.png" alt="oneTap Settings screen with Google Drive backup and restore" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-card">
+        <h3>Just say it</h3>
+        <p>Hands-free device control — volume, brightness, flashlight, and more.</p>
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <img src="screenshots/voice-commands.png" alt="oneTap voice commands help screen" loading="lazy" />
           </div>
         </div>
       </div>
@@ -224,6 +238,27 @@
         <p>Tap the bubble's mic and say things like "brightness to 50%," "turn on the
           flashlight," or "silent mode" — fully hands-free device control.</p>
       </div>
+
+      <div class="card reveal">
+        <div class="icon">🗣️</div>
+        <h3>Speak it, watch it type itself</h3>
+        <p>A live, streaming transcript as you talk — "spent 500 on groceries" becomes a
+          categorized expense without ever touching the keyboard.</p>
+      </div>
+
+      <div class="card reveal" style="transition-delay: 0.05s;">
+        <div class="icon">💸</div>
+        <h3>Expenses, categorized automatically</h3>
+        <p>Every transaction sorted into a category — food, transport, bills — with a
+          spending breakdown chart so you always know where it went.</p>
+      </div>
+
+      <div class="card reveal" style="transition-delay: 0.1s;">
+        <div class="icon">☁️</div>
+        <h3>Back up to your own Google Drive</h3>
+        <p>One tap backs up every transaction, event, and alarm to a private folder in
+          your own Drive — restore it all again on any device, any time.</p>
+      </div>
     </div>
   </section>
 </div>
@@ -265,12 +300,9 @@
       <p>oneTap is still in development. Leave your email and you'll be the first to know
         when it's ready to try.</p>
 
-      <!--
-        Free waitlist capture via Formspree (formspree.io) — no backend needed.
-        Replace YOUR_FORM_ID below with your own free Formspree form ID before publishing.
-        See README.md for the 2-minute setup.
-      -->
-      <form class="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="waitlistForm">
+      <!-- Waitlist capture via Formspree (formspree.io) — no backend needed; submissions
+           are emailed straight to whatever address this form was configured with. -->
+      <form class="waitlist-form" action="https://formspree.io/f/maqrpnvy" method="POST" id="waitlistForm">
         <input type="email" name="email" placeholder="you@example.com" required />
         <button type="submit" class="btn btn-primary">Notify me</button>
       </form>
@@ -312,6 +344,22 @@
   } else {
     document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in-view'));
   }
+
+  // Mobile nav: hidden by default under 720px (see styles.css), toggled open/closed
+  // by the hamburger button, and auto-closed after tapping any link so it doesn't
+  // stay open over the section you just navigated to.
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 
   const form = document.getElementById('waitlistForm');
   form.addEventListener('submit', async (e) => {

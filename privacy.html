@@ -6,17 +6,21 @@
 <title>Privacy Policy — oneTap</title>
 <meta name="description" content="Privacy policy for the oneTap Android app." />
 <link rel="stylesheet" href="styles.css" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%235dcaa5%22/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 108 108%22><circle cx=%2254%22 cy=%2254%22 r=%2254%22 fill=%22%230F6E56%22/><path d=%22M58.1,32.2 L43.1,55.4 L51.3,55.4 L47.9,75.1 L64.9,51.3 L55.4,51.3 Z%22 fill=%22%23fff%22/></svg>">
 </head>
 <body>
 
-<div class="wrap">
+<div class="wrap nav-wrap">
   <nav class="nav">
     <a class="brand" href="index.html" style="text-decoration:none;">
-      <span class="brand-mark">⚡</span>
+      <svg class="brand-mark" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="54" cy="54" r="54" fill="#0F6E56" />
+        <path d="M58.1,32.2 L43.1,55.4 L51.3,55.4 L47.9,75.1 L64.9,51.3 L55.4,51.3 Z" fill="#FFFFFF" />
+      </svg>
       oneTap
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
       <a href="index.html#why-onetap">Why oneTap</a>
       <a href="index.html#screenshots">Screenshots</a>
       <a href="index.html#features">Features</a>
@@ -170,6 +174,12 @@
       contact us using the email below.
     </p>
     <p>
+      Settings also has a "Reset app" option you can use any time, which immediately clears
+      every transaction, event, and alarm history entry saved locally on your device and returns
+      you to the first-run walkthrough. It only ever touches local data — it does not delete,
+      alter, or disconnect anything already saved in your own Google Drive backup (see above).
+    </p>
+    <p>
       If you've used the optional Google Drive backup feature, see "Google Drive backup" above
       for how to remove that data — it lives in your own Google Drive account, not on any
       server we operate, so it's removed the same way you'd remove any other app's access to
@@ -217,7 +227,22 @@
   </footer>
 </div>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
 
 </body>
 </html>
