@@ -629,7 +629,7 @@ footer {
   font-weight: 600;
 }
 
-/* Problems & Solutions ("Without oneTap" / "With oneTap" comparison) */
+/* Problems & Solutions ("Without OneTap" / "With OneTap" comparison) */
 .compare {
   display: grid;
   grid-template-columns: 1fr 1fr;
